@@ -8,8 +8,6 @@ import { EventEmitter } from "events";
 
 import chalk from "chalk";
 
-import resolvePkg from "resolve-pkg";
-
 import { formatterHelpers, JsonFormatter } from "@cucumber/cucumber";
 
 import { NdjsonToMessageStream } from "@cucumber/message-streams";
@@ -234,10 +232,12 @@ export async function afterRunHandler(config: Cypress.PluginConfigOptions) {
         input,
         new NdjsonToMessageStream(),
         new CucumberHtmlStream(
-          resolvePkg("@cucumber/html-formatter", { cwd: __dirname }) +
-            "/dist/main.css",
-          resolvePkg("@cucumber/html-formatter", { cwd: __dirname }) +
-            "/dist/main.js"
+          require.resolve("@cucumber/html-formatter/dist/main.css", {
+            paths: [__dirname],
+          }),
+          require.resolve("@cucumber/html-formatter/dist/main.js", {
+            paths: [__dirname],
+          })
         ),
         output,
         (err) => {
