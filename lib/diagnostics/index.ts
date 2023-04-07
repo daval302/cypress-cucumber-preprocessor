@@ -11,7 +11,6 @@ import {
   getConfiguration as resolveCypressConfiguration,
   getTestFiles,
 } from "@badeball/cypress-configuration";
-import { addAlias } from "module-alias";
 import Table from "cli-table";
 import ancestor from "common-ancestor-path";
 import { resolve as resolvePreprocessorConfiguration } from "../preprocessor-configuration";
@@ -301,11 +300,6 @@ export async function execute(options: {
   env: NodeJS.ProcessEnv;
   cwd: string;
 }): Promise<void> {
-  addAlias(
-    "@badeball/cypress-cucumber-preprocessor",
-    "@badeball/cypress-cucumber-preprocessor/methods"
-  );
-
   const cypress = resolveCypressConfiguration(options);
 
   const implicitIntegrationFolder = assertAndReturn(
