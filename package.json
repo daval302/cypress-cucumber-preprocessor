@@ -18,7 +18,7 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "browser": "methods.js",
+  "browser": "lib/methods.js",
   "files": [
     "lib/**/*.js",
     "lib/**/*.d.ts",
@@ -26,8 +26,6 @@
     "browserify.d.ts",
     "esbuild.js",
     "esbuild.d.ts",
-    "methods.js",
-    "methods.d.ts",
     "webpack.js",
     "webpack.d.ts"
   ],

@@ -138,6 +138,7 @@ function doesFeatureMatch(expression: string) {
 }
 
 export {
+  DataTable,
   isFeature,
   doesFeatureMatch,
   defineStep as Given,
