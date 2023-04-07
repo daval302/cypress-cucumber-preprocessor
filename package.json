@@ -64,7 +64,6 @@
     "esbuild": "^0.17.8",
     "glob": "^9.3.0",
     "is-path-inside": "^3.0.3",
-    "node-hook": "^1.0.0",
     "source-map": "^0.7.4",
     "uuid": "^8.3.2"
   },
@@ -81,7 +80,6 @@
     "@types/fs-extra": "^9.0.13",
     "@types/glob": "^8.1.0",
     "@types/jsdom": "^20.0.0",
-    "@types/node-hook": "^1.0.1",
     "@types/pngjs": "^6.0.1",
     "@types/prettier": "^2.6.3",
     "@types/stream-buffers": "^3.0.4",
