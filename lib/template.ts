@@ -30,6 +30,8 @@ import { rebuildOriginalConfigObject } from "./add-cucumber-preprocessor-plugin"
 
 import debug from "./debug";
 
+import type { CreateTestsOptions } from "./create-tests";
+
 const { stringify } = JSON;
 
 export async function compile(
@@ -134,6 +136,21 @@ export async function compile(
   const ensureRelativeToProjectRoot = (path: string) =>
     ensureIsRelative(configuration.projectRoot, path);
 
+  const createTestsOptions: CreateTestsOptions = [
+    data,
+    gherkinDocument,
+    pickles,
+    preprocessor.messages.enabled,
+    preprocessor.omitFiltered,
+    {
+      stepDefinitions,
+      stepDefinitionPatterns: stepDefinitionPatterns.map(
+        ensureRelativeToProjectRoot
+      ),
+      stepDefinitionPaths: stepDefinitionPaths.map(ensureRelativeToProjectRoot),
+    },
+  ];
+
   return `
     const { default: createTests } = require(${createTestsPath});
     const { withRegistry } = require(${registryPath});
@@ -149,22 +166,6 @@ export async function compile(
 
     registry.finalize();
 
-    createTests(
-      registry,
-      ${stringify(data)},
-      ${stringify(gherkinDocument)},
-      ${stringify(pickles)},
-      ${preprocessor.messages.enabled},
-      ${preprocessor.omitFiltered},
-      ${stringify({
-        stepDefinitions,
-        stepDefinitionPatterns: stepDefinitionPatterns.map(
-          ensureRelativeToProjectRoot
-        ),
-        stepDefinitionPaths: stepDefinitionPaths.map(
-          ensureRelativeToProjectRoot
-        ),
-      })}
-    );
+    createTests(registry, ...${stringify(createTestsOptions)});
   `;
 }
