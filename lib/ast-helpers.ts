@@ -2,8 +2,6 @@ import messages from "@cucumber/messages";
 
 import { assertAndReturn } from "./assertions";
 
-import { YieldType } from "./types";
-
 export function* traverseGherkinDocument(
   gherkinDocument: messages.GherkinDocument
 ) {
@@ -197,6 +195,10 @@ export function collectTagNames(
     ) ?? []
   );
 }
+
+export type YieldType<T extends Generator> = T extends Generator<infer R>
+  ? R
+  : never;
 
 export function createAstIdMap(
   gherkinDocument: messages.GherkinDocument

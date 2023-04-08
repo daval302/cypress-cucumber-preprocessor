@@ -14,7 +14,3 @@ export interface IStepDefinitionBody<
 > {
   (this: C, ...args: T): void;
 }
-
-export type YieldType<T extends Generator> = T extends Generator<infer R>
-  ? R
-  : never;
