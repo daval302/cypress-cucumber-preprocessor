@@ -3,7 +3,6 @@ import path from "path";
 import { promises as fs } from "fs";
 import assert from "assert";
 import { PNG } from "pngjs";
-import { version as cypressVersion } from "cypress/package.json";
 
 function isObject(object: any): object is object {
   return typeof object === "object" && object != null;

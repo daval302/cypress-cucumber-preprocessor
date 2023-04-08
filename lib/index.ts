@@ -76,8 +76,8 @@ export function Step(
   throw createUnimplemented();
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function defineParameterType<T, C extends Mocha.Context>(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   options: IParameterTypeDefinition<T, C>
 ) {
   throw createUnimplemented();
