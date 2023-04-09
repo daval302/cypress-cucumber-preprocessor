@@ -14,7 +14,7 @@ import {
   ICypressPre10Configuration,
 } from "@badeball/cypress-configuration";
 
-import debug from "./debug";
+import debug from "./helpers/debug";
 
 import { IPreprocessorConfiguration } from "./preprocessor-configuration";
 

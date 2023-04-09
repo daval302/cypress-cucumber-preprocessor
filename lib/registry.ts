@@ -10,11 +10,11 @@ import parse from "@cucumber/tag-expressions";
 
 import { v4 as uuid } from "uuid";
 
-import { assertAndReturn } from "./assertions";
+import { assertAndReturn } from "./helpers/assertions";
 
 import DataTable from "./data_table";
 
-import { CypressCucumberError } from "./error";
+import { CypressCucumberError } from "./helpers/error";
 
 import {
   IHookBody,
@@ -22,7 +22,10 @@ import {
   IStepDefinitionBody,
 } from "./types";
 
-import { maybeRetrievePositionFromSourceMap, Position } from "./source-map";
+import {
+  maybeRetrievePositionFromSourceMap,
+  Position,
+} from "./helpers/source-map";
 
 export interface IStepDefinition<T extends unknown[], C extends Mocha.Context> {
   expression: Expression;

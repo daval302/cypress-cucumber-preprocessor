@@ -37,13 +37,13 @@ import {
 
 import { resolve as origResolve } from "./preprocessor-configuration";
 
-import { notNull } from "./type-guards";
+import { notNull } from "./helpers/type-guards";
 
-import { getTags } from "./environment-helpers";
+import { getTags } from "./helpers/environment";
 
 import { ensureIsAbsolute } from "./helpers/paths";
 
-import { createTimestamp } from "./messages-helpers";
+import { createTimestamp } from "./helpers/messages";
 
 function memoize<T extends (...args: any[]) => any>(
   fn: T

@@ -6,7 +6,7 @@ import browserify from "@cypress/browserify-preprocessor";
 
 import { ICypressConfiguration } from "@badeball/cypress-configuration";
 
-import debug from "../debug";
+import debug from "../helpers/debug";
 
 import { compile } from "../template";
 

@@ -4,11 +4,15 @@ import { cosmiconfig } from "cosmiconfig";
 
 import util from "util";
 
-import debug from "./debug";
+import debug from "./helpers/debug";
 
 import { ensureIsRelative } from "./helpers/paths";
 
-import { isString, isStringOrStringArray, isBoolean } from "./type-guards";
+import {
+  isString,
+  isStringOrStringArray,
+  isBoolean,
+} from "./helpers/type-guards";
 
 function hasOwnProperty<X extends Record<string, unknown>, Y extends string>(
   value: X,

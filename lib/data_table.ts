@@ -1,6 +1,6 @@
 import messages from "@cucumber/messages";
 
-import { assert, assertAndReturn } from "./assertions";
+import { assert, assertAndReturn } from "./helpers/assertions";
 
 function zip<A, B>(collectionA: A[], collectionB: B[]) {
   return collectionA.map<[A, B]>((element, index) => [

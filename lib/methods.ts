@@ -4,9 +4,9 @@ import parse from "@cucumber/tag-expressions";
 
 import { fromByteArray } from "base64-js";
 
-import { createError } from "./assertions";
+import { createError } from "./helpers/assertions";
 
-import { collectTagNames } from "./ast-helpers";
+import { collectTagNames } from "./helpers/ast";
 
 import {
   INTERNAL_SPEC_PROPERTIES,
@@ -15,7 +15,7 @@ import {
 
 import { retrieveInternalSpecProperties } from "./create-tests";
 
-import { runStepWithLogGroup } from "./cypress";
+import { runStepWithLogGroup } from "./helpers/cypress";
 
 import DataTable from "./data_table";
 

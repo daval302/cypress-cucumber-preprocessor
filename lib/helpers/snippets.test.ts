@@ -7,7 +7,7 @@ import {
   ParameterTypeRegistry,
 } from "@cucumber/cucumber-expressions";
 
-import { stripIndent } from "./helpers/strings";
+import { stripIndent } from "./strings";
 
 import { generateSnippet } from "./snippets";
 

@@ -18,17 +18,17 @@ import {
 } from "@cucumber/messages";
 import * as esbuild from "esbuild";
 import sourceMap from "source-map";
-import { assert, assertAndReturn } from "../assertions";
-import { createAstIdMap } from "../ast-helpers";
+import { assert, assertAndReturn } from "../helpers/assertions";
+import { createAstIdMap } from "../helpers/ast";
 import { ensureIsRelative } from "../helpers/paths";
 import { IPreprocessorConfiguration } from "../preprocessor-configuration";
 import { IStepDefinition, Registry, withRegistry } from "../registry";
-import { Position } from "../source-map";
+import { Position } from "../helpers/source-map";
 import {
   getStepDefinitionPatterns,
   getStepDefinitionPaths,
 } from "../step-definitions";
-import { notNull } from "../type-guards";
+import { notNull } from "../helpers/type-guards";
 
 export interface DiagnosticStep {
   source: string;

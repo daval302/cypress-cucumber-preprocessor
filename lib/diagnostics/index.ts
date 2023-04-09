@@ -14,7 +14,7 @@ import {
 import Table from "cli-table";
 import ancestor from "common-ancestor-path";
 import { resolve as resolvePreprocessorConfiguration } from "../preprocessor-configuration";
-import { Position } from "../source-map";
+import { Position } from "../helpers/source-map";
 import { IStepDefinition } from "../registry";
 import { ensureIsRelative } from "../helpers/paths";
 import { indent } from "../helpers/strings";
@@ -24,8 +24,8 @@ import {
   DiagnosticResult,
   UnmatchedStep,
 } from "./diagnose";
-import { assertAndReturn } from "../assertions";
-import { generateSnippet } from "../snippets";
+import { assertAndReturn } from "../helpers/assertions";
+import { generateSnippet } from "../helpers/snippets";
 
 export function log(...lines: string[]) {
   console.log(lines.join("\n"));

@@ -40,7 +40,7 @@
     "test:fmt": "prettier --ignore-path .gitignore --check '**/*.ts'",
     "test:lint": "eslint --max-warnings=0 .",
     "test:types": "tsc -p test-d",
-    "test:unit": "mocha lib/**/*.test.ts",
+    "test:unit": "mocha 'lib/**/*.test.ts'",
     "test:run-all-specs": "mocha --timeout 0 test/run-all-specs.ts",
     "test:integration": "cucumber-js",
     "prepublishOnly": "npm run clean && npm run build && npm run test"

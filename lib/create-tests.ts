@@ -9,7 +9,7 @@ import {
 
 import { v4 as uuid } from "uuid";
 
-import { assertAndReturn, fail } from "./assertions";
+import { assertAndReturn, fail } from "./helpers/assertions";
 
 import DataTable from "./data_table";
 
@@ -25,7 +25,7 @@ import {
   collectTagNames,
   createAstIdMap,
   traverseGherkinDocument,
-} from "./ast-helpers";
+} from "./helpers/ast";
 
 import {
   HOOK_FAILURE_EXPR,
@@ -37,19 +37,19 @@ import {
   TASK_TEST_STEP_STARTED,
 } from "./constants";
 
-import { getTags } from "./environment-helpers";
+import { getTags } from "./helpers/environment";
 
-import { notNull } from "./type-guards";
+import { notNull } from "./helpers/type-guards";
 
-import { looksLikeOptions, tagToCypressOptions } from "./tag-parser";
+import { looksLikeOptions, tagToCypressOptions } from "./helpers/tag-parser";
 
-import { createTimestamp, duration } from "./messages-helpers";
+import { createTimestamp, duration } from "./helpers/messages";
 
 import { indent, stripIndent } from "./helpers/strings";
 
-import { generateSnippet } from "./snippets";
+import { generateSnippet } from "./helpers/snippets";
 
-import { runStepWithLogGroup } from "./cypress";
+import { runStepWithLogGroup } from "./helpers/cypress";
 
 type Node = ReturnType<typeof parse>;
 

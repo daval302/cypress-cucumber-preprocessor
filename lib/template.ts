@@ -13,7 +13,7 @@ import {
 
 import ancestor from "common-ancestor-path";
 
-import { assertAndReturn } from "./assertions";
+import { assertAndReturn } from "./helpers/assertions";
 
 import { resolve } from "./preprocessor-configuration";
 
@@ -22,13 +22,13 @@ import {
   getStepDefinitionPatterns,
 } from "./step-definitions";
 
-import { notNull } from "./type-guards";
+import { notNull } from "./helpers/type-guards";
 
 import { ensureIsRelative } from "./helpers/paths";
 
 import { rebuildOriginalConfigObject } from "./add-cucumber-preprocessor-plugin";
 
-import debug from "./debug";
+import debug from "./helpers/debug";
 
 import type { CreateTestsOptions } from "./create-tests";
 
