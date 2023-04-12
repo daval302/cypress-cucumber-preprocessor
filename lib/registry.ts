@@ -225,7 +225,7 @@ export class Registry {
   }
 
   public runHook(world: Mocha.Context, hook: IHook) {
-    hook.implementation.call(world);
+    return hook.implementation.call(world);
   }
 }
 
