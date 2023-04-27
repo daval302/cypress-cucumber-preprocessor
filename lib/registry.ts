@@ -20,7 +20,7 @@ import {
   IHookBody,
   IParameterTypeDefinition,
   IStepDefinitionBody,
-} from "./types";
+} from "./public-member-types";
 
 import {
   maybeRetrievePositionFromSourceMap,

@@ -11,7 +11,7 @@ import {
   Before,
   After,
   DataTable,
-} from "../lib/methods";
+} from "../lib/entrypoint-browser";
 
 Given("foo", function (foo, bar: number, baz: string) {
   expectType<Mocha.Context>(this);

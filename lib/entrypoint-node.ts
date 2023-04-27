@@ -4,7 +4,7 @@ import {
   IHookBody,
   IParameterTypeDefinition,
   IStepDefinitionBody,
-} from "./types";
+} from "./public-member-types";
 
 export { resolve as resolvePreprocessorConfiguration } from "./preprocessor-configuration";
 
@@ -30,7 +30,7 @@ function createUnimplemented() {
   return new Error("Cucumber methods aren't available in a node environment");
 }
 
-export { NOT_FEATURE_ERROR } from "./methods";
+export { NOT_FEATURE_ERROR } from "./entrypoint-browser";
 
 export function isFeature(): boolean {
   throw createUnimplemented();

@@ -13,7 +13,7 @@ import {
   TASK_CREATE_STRING_ATTACHMENT,
 } from "./constants";
 
-import { retrieveInternalSpecProperties } from "./create-tests";
+import { retrieveInternalSpecProperties } from "./browser-runtime";
 
 import { runStepWithLogGroup } from "./helpers/cypress";
 
@@ -25,7 +25,7 @@ import {
   IHookBody,
   IParameterTypeDefinition,
   IStepDefinitionBody,
-} from "./types";
+} from "./public-member-types";
 
 function defineStep<T extends unknown[], C extends Mocha.Context>(
   description: string | RegExp,

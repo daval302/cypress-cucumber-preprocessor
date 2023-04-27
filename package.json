@@ -16,14 +16,14 @@
   "bin": {
     "cypress-cucumber-diagnostics": "dist/diagnostics/index.js"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "browser": "dist/methods.js",
+  "main": "dist/entrypoint-node.js",
+  "types": "dist/entrypoint-node.d.ts",
+  "browser": "dist/entrypoint-browser.js",
   "exports": {
     ".": {
-      "node": "./dist/index.js",
-      "types": "./dist/index.d.ts",
-      "browser": "./dist/methods.js"
+      "node": "./dist/entrypoint-node.js",
+      "types": "./dist/entrypoint-node.d.ts",
+      "browser": "./dist/entrypoint-browser.js"
     },
     "./*": "./dist/bundler-utils/*.js"
   },
